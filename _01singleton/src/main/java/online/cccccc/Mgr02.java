@@ -8,7 +8,6 @@ package online.cccccc;
 public class Mgr02 {
     private volatile static Mgr02 INSTANCE;
     private Mgr02(){};
-
     /**
      * 可以使用线程锁的方式（synchronized 修饰此方法）解决，但是性能会下降
      * @return
@@ -21,7 +20,6 @@ public class Mgr02 {
                     INSTANCE = new Mgr02();
                 }
             }
-//            INSTANCE = new Mgr02();
         }
         return INSTANCE;
     }
@@ -30,12 +28,11 @@ public class Mgr02 {
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             new Thread(()->{
                 // 同一个类的 不同对象，它的 hashCode 是不同的
                 System.out.println(Mgr02.getInstance().hashCode());
             }).start();
         }
     }
-
 }
