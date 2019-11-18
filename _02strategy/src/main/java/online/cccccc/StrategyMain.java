@@ -10,10 +10,10 @@ import java.util.Properties;
  * @author 你是电脑
  * @create 2019/11/3 - 17:18
  */
-public class Main {
+public class StrategyMain {
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         Properties properties = new Properties();
-        InputStream resource = Main.class.getClassLoader().getResourceAsStream("comparable.properties");
+        InputStream resource = StrategyMain.class.getClassLoader().getResourceAsStream("comparable.properties");
 
         properties.load(resource);
 
